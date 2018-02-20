@@ -1,2 +1,3 @@
 Hello World!
-This is Megha and Serene.
+This is Megha.
+Just a try at Git.
