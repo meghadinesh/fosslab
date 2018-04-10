@@ -1,0 +1,17 @@
+
+To display all currently available interfaces:
+ifconfig -a
+
+Temporarily configuring the IP address:
+sudo ifconfig enp2s0 192.168.1.184 netmask 255.255.252.0
+
+Verifying the IP address:
+ifconfig enp2s0
+
+Configuring default gateway:
+sudo route add default gw 192.168.1.184 enp2s0
+
+Verifying default gateway: 
+route -n
+
+

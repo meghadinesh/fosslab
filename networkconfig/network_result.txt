@@ -1,0 +1,47 @@
+ifconfig -a 
+enp2s0    Link encap:Ethernet  HWaddr 50:7b:9d:be:8d:ac  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:194 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:194 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:64277 (64.2 KB)  TX bytes:64277 (64.2 KB)
+
+wlp3s0    Link encap:Ethernet  HWaddr a8:a7:95:8a:81:63  
+          inet addr:192.168.3.149  Bcast:192.168.3.255  Mask:255.255.252.0
+          inet6 addr: fe80::ca7c:478f:f58a:3773/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:9831 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:8774 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:6259600 (6.2 MB)  TX bytes:1723513 (1.7 MB)
+
+
+ifconfig enp2s0  
+enp2s0    Link encap:Ethernet  HWaddr 50:7b:9d:be:8d:ac  
+          inet addr:192.168.1.184  Bcast:192.168.3.255  Mask:255.255.252.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+
+route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.1.184   0.0.0.0         UG    0      0        0 enp2s0
+0.0.0.0         192.168.0.3     0.0.0.0         UG    600    0        0 wlp3s0
+169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 enp2s0
+192.168.0.0     0.0.0.0         255.255.252.0   U     0      0        0 enp2s0
+192.168.0.0     0.0.0.0         255.255.252.0   U     600    0        0 wlp3s0
+
+
